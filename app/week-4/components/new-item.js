@@ -39,7 +39,7 @@ export function NewItem(){
                     </div>
                     <div className="flex flex-row items-center justify-center">
                         <div className="flex-1 p-2">
-                            <input className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900" type="number" value={quantity} onChange={onQuantityChange}></input>
+                            <input className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900" min={1} max={99} type="number" value={quantity} onChange={onQuantityChange}></input>
                         </div>
 
                         <div className="flex-1 p-2">
