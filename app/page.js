@@ -13,6 +13,9 @@ export default function Home() {
         <br></br>
         <Link className="hover:text-stone-400 hover:underline" href="./week-4">Week 4</Link>
         <br></br>
+        <Link className="hover:text-stone-400 hover:underline" href="./week-5">Week 5</Link>
+        <br></br>
+        
       </div>
       
     </main>
