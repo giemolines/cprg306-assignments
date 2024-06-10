@@ -1,5 +1,5 @@
 "use client"
-import { useState} from "react"
+import {useState} from "react"
 
 export function NewItem({onAddItem}){
 
@@ -8,7 +8,7 @@ export function NewItem({onAddItem}){
     const [category, setCategory] = useState("produce");
     const [id, setID] = useState("");
 
-    //CHAT GPT CODE
+    //AI-GENERATED CODE
     function generateID() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         const length = 16;
@@ -23,7 +23,7 @@ export function NewItem({onAddItem}){
     const handleSubmit = (event) =>{
         event.preventDefault();
         const newItem = {id:id, name:name, quantity:quantity, category:category};
-        alert(`${newItem.name}, ${newItem.quantity}, ${newItem.category}, ${newItem.id}`);
+        console.log(`${newItem.name}, ${newItem.quantity}, ${newItem.category}, ${newItem.id}`);
         onAddItem(newItem);
         setName("");
         setQuantity(1);
