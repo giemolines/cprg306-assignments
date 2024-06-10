@@ -15,6 +15,7 @@ export function NewItem(){
         setName("");
         setQuantity(1);
         setCategory("Produce");
+        return newItem;
     };
 
     function onNameChange(event){
