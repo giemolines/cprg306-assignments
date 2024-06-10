@@ -1,23 +1,22 @@
 "use client"
+import items from './items';
 import { useState } from 'react';
 import Item from './item';
 
 
-export default function ItemList({items}){
+export default function ItemList(){
     const [sortBy, setSortBy] = useState("name");
     const [grouped, setGrouped] = useState(false);
-
-    const modifiedItems = [...items];
     
     function sortItems (){
         if (sortBy == "name"){
-            modifiedItems.sort((a, b) =>  a.name.localeCompare(b.name));
+            items.sort((a, b) =>  a.name.localeCompare(b.name));
         }
         else if (sortBy == "category"){
-            modifiedItems.sort((a, b) =>  a.category.localeCompare(b.category));
+            items.sort((a, b) =>  a.category.localeCompare(b.category));
         }
 
-        return modifiedItems;
+        return items;
     }
 
     const sortByName = () => {
@@ -39,7 +38,7 @@ export default function ItemList({items}){
     }
 
     const displayItems = (items) =>{
-        const sortedItems = sortItems(modifiedItems)
+        const sortedItems = sortItems(items)
         const categories =[];
 
         if (!grouped){

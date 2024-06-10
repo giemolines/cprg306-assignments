@@ -7,32 +7,30 @@ export function NewItem({onAddItem}){
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
-    const [id, setId] = useState("");
+    const [id, setID] = useState("");
 
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        generateID();
-        const newItem = <Item id = {id} name={name} quantity={quantity} category={category}/>;
-        onAddItem(newItem)
-        setName("");
-        setQuantity(1);
-        setCategory("Produce");
-        setId("")
-        
-    };
-
-    function generateID(){
-        // AI GENERATED CODE
+    //CHAT GPT CODE
+    function generateID() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const length = 16; 
+        const length = 16;
         let result = '';
         for (let i = 0; i < length; i++) {
             result += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        setId(result);
+        setID(result);
     }
-
     
+
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        const newItem = <Item id={id} name={name} quantity={quantity} category={category}/>;
+        alert(`ID: ${id}, Added item: ${name}, Quantity: ${quantity}, Category: ${category}`);
+        onAddItem(newItem);
+        setName("");
+        setQuantity(1);
+        setCategory("Produce");
+    };
+
 
     function onNameChange(event){
         setName(event.target.value);
@@ -77,7 +75,7 @@ export function NewItem({onAddItem}){
                         </div>
                     </div>
                     <div className="flex-1 p-2">
-                        <button type='submit' className="h-10 bg-sky-500 text-stone-50 font-bold rounded-md hover:bg-sky-300 active:bg-orange-400 w-full">+</button>
+                        <button type='submit' className="h-10 bg-sky-500 text-stone-50 font-bold rounded-md hover:bg-sky-300 active:bg-orange-400 w-full" onClick={generateID}>+</button>
                     </div>
                 </form>
             </div>

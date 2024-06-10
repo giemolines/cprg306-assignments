@@ -11,7 +11,6 @@ export function NewItem(){
     const handleSubmit = (event) =>{
         event.preventDefault();
         const newItem = <Item name={name} quantity={quantity} category={category}/>;
-        console.log(newItem);
         alert(`Added item: ${name}, Quantity: ${quantity}, Category: ${category}`);
         setName("");
         setQuantity(1);

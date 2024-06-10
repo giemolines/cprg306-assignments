@@ -1,18 +1,19 @@
 "use client"
 import Link from "next/link";
 import ItemList from "./item-list";
+import itemsData from "./items.json"
 import NewItem from "./new-item";
-import itemsData from './items.json';
 import { useState } from "react";
 
 
 export default function Page(){
 
-    const [items,setItems] = useState(itemsData);
+    const [items, setItems] = useState(itemsData)
 
-    const handleAddItem = (newItem) =>{
-        setItems([...itemsData, newItem] )
+    function handleAddItem (newItem) {
+        setItems([...items, newItem]) ;
     }
+
 
     return(
         <main className="h-fill bg-slate-900 p-5">
@@ -22,7 +23,9 @@ export default function Page(){
             </div>
             <div>
                 <NewItem onAddItem={handleAddItem}></NewItem>
-                <ItemList items={items}></ItemList> 
+            </div>
+            <div>
+                <ItemList items={items}></ItemList>
             </div>
         </main>
     );
