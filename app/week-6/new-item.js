@@ -1,6 +1,5 @@
 "use client"
 import { useState} from "react"
-import Item from "./item";
 
 export function NewItem({onAddItem}){
 
@@ -23,8 +22,8 @@ export function NewItem({onAddItem}){
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        const newItem = <Item id={id} name={name} quantity={quantity} category={category}/>;
-        alert(`ID: ${id}, Added item: ${name}, Quantity: ${quantity}, Category: ${category}`);
+        const newItem = {id:id, name:name, quantity:quantity, category:category};
+        alert(`${newItem.name}, ${newItem.quantity}, ${newItem.category}, ${newItem.id}`);
         onAddItem(newItem);
         setName("");
         setQuantity(1);
