@@ -15,7 +15,7 @@ export function NewItem(){
         setName("");
         setQuantity(1);
         setCategory("Produce");
-        return newItem;
+        return newItem; 
     };
 
     function onNameChange(event){
@@ -35,16 +35,16 @@ export function NewItem(){
             <div className="flex-1 bg-stone-50 rounded-xl p-5 max-w-screen-sm">
                 <form className="flex-col text-slate-900" onSubmit={handleSubmit}>
                     <div className="flex-1 p-2">
-                        <input className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900" required placeholder="Item name" type="text" value ={name} onChange={onNameChange}></input>
+                        <input className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900 bg-stone-100" required placeholder="Item name" type="text" value ={name} onChange={onNameChange}></input>
                     </div>
                     <div className="flex flex-row items-center justify-center">
                         <div className="flex-1 p-2">
-                            <input className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900" min={1} max={99} type="number" value={quantity} onChange={onQuantityChange}></input>
+                            <input className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900 bg-stone-100" min={1} max={99} type="number" value={quantity} onChange={onQuantityChange}></input>
                         </div>
 
                         <div className="flex-1 p-2">
                             <label>
-                                <select className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900 " value={category} onChange={onCategoryChange}>
+                                <select className="w-full p-2 rounded-md focus: outline-none focus:ring-2 focus:ring-slate-900 bg-stone-100" value={category} onChange={onCategoryChange}>
                                     <option value="Produce">Produce</option>
                                     <option value="Dairy">Dairy</option>
                                     <option value="Bakery">Bakery</option>
